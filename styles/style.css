@@ -69,6 +69,15 @@ ol {
   object-fit: cover;
 }
 
+.result__video:focus {
+  outline: none;
+}
+
+.result__video:focus-visible {
+  outline: 1px solid rgb(255 255 255);
+  outline-offset: 1px;
+}
+
 .search-form {
   display: flex;
   justify-content: space-between;
@@ -80,7 +89,13 @@ ol {
   display: flex;
   align-items: center;
   width: fit-content;
+  margin: 5px 0 0 0;
   gap: 5px;
+}
+
+.search-form__label:has(:focus-visible) {
+  outline: 1px solid rgb(255 255 255);
+  outline-offset: 1px;
 }
 
 .search-form__fieldset {
@@ -93,10 +108,20 @@ ol {
   font-size: 18px;
 }
 
+.search-form__label-text:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  text-decoration-skip-ink: none;
+}
+
 .search-form__textfield {
   appearance: none;
   width: 230px;
   color: rgb(255 255 255);
+}
+
+.search-form__textfield:focus {
+  outline: none;
 }
 
 .search-form__textfield[type="text"] {
@@ -106,7 +131,6 @@ ol {
   border: none;
   border-top: 1px solid rgb(255 255 255);
   border-bottom: 1px solid rgb(255 255 255);
-  margin: 5px 0 0 0;
   padding: 2.5px 14px 2.5px 0;
   background-color: transparent;
 }
@@ -119,14 +143,12 @@ ol {
   display: flex;
   user-select: none; /* решил использовать, т.к. при частых кликах выделяется текст, а по-моему мнению этого быть не должно, ведь элементы чекбокса позиицонируются как кнопки */
   gap: 15px;
-  padding: 5px 0 0 0;
 }
 
 .search-form__pseudo-checkbox {
   width: 19px;
   height: 19px;
   border: 1px solid rgb(255 255 255);
-  padding: 1px;
 }
 
 .search-form__pseudo-checkbox::after {
@@ -139,12 +161,6 @@ ol {
   opacity: 0;
 }
 
-.search-form__label-text:hover {
-  cursor: pointer;
-  text-decoration: underline;
-  text-decoration-skip-ink: none;
-}
-
 .button {
   color: rgb(255 255 255);
   font-family: inherit;
@@ -154,11 +170,19 @@ ol {
   background-color: transparent;
 }
 
+.button:focus {
+  outline: none;
+}
+
+.button:focus-visible {
+  outline: 1px solid rgb(255 255 255);
+  outline-offset: 1px;
+}
+
 .search-form__submit-button {
   align-self: center;
   margin: 20px 0 0 0;
-  padding: 6px 0 6px 0;
-  width: 194px;
+  width: 190px;
   height: 34px;
 }
 
@@ -215,6 +239,10 @@ ol {
   gap: 30px;
 }
 
+.content__list-item {
+  padding: 0 3px 0 3px;
+}
+
 .more-button {
   padding: 6px 0 6px 0;
   width: 100%;
@@ -233,8 +261,14 @@ ol {
 
 .content__card-link {
   display: block;
+  outline: none;
   color: rgb(255 255 255);
   text-decoration: none;
+}
+
+.content__card-link:focus-visible {
+  outline: 1px solid rgb(255 255 255);
+  outline-offset: 1px;
 }
 
 .content__card-link:hover {
@@ -259,6 +293,7 @@ ol {
 
 .content__video-card-description-container {
   max-width: 200px;
+  flex-grow: 1;
 }
 
 .content__video-card-title {
@@ -287,10 +322,6 @@ ol {
   min-width: 194px;
   object-fit: cover;
   object-position: center;
-}
-
-.content__video-card-description-container {
-  flex-grow: 1;
 }
 
 /* Кастомный скроллбар */
